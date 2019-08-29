@@ -1,0 +1,8 @@
+pt-BR:
+  hyrax:
+    icons:
+      scanned_map:     'fa fa-file-text-o'
+    select_type:
+      scanned_map:
+        description:        "Scanned map trabalhos"
+        name:               "Scanned Map"

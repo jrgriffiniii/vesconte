@@ -1,0 +1,8 @@
+it:
+  hyrax:
+    icons:
+      scanned_map:     'fa fa-file-text-o'
+    select_type:
+      scanned_map:
+        description:        "Scanned map opere"
+        name:               "Scanned Map"
