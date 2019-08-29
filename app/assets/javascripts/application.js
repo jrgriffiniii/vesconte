@@ -22,4 +22,7 @@
 
 //= require_tree .
 //= require hyrax
-
+//= require leaflet
+//= require leaflet-boundingbox
+//= require Control.Geocoder
+//= require bounding_box_selector
