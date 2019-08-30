@@ -1,0 +1,15 @@
+#bbox {
+  height: 500px;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.bbox-inputs {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .input-group-addon div {
+    width: 30px;
+  }
+}

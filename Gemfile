@@ -71,3 +71,5 @@ end
 
 gem 'riiif', '~> 2.0'
 gem 'hydra-role-management'
+gem 'leaflet-rails', '~> 0.7'
+gem 'browse-everything'
