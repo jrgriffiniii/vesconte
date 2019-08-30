@@ -9,11 +9,10 @@ class ScannedMap < ActiveFedora::Base
   validates :title, presence: { message: 'Your work must have a title.' }
 
   # Defines the bounding box for the layer.
-  # We always assert units of decimal degrees and EPSG:4326 projection.
-  # @see http://dublincore.org/documents/dcmi-box/
+  # The values are structured using the Well-Known Text standard.
   # @example
-  #   vector.coverage = 'northlimit=43.039; eastlimit=-69.856; southlimit=42.943; westlimit=-71.032; units=degrees; projection=EPSG:4326'
-  property :coverage, predicate: ::RDF::Vocab::DC11.coverage, multiple: false
+  #   vector.coverage = ['POLYGON ((10 10, 40 10, 40 40, 10 40, 10 10))']
+  property :coverage, predicate: ::RDF::Vocab::DC11.coverage, class_name: 'WellKnownTextLiteral'
 
   # This must be included at the end, because it finalizes the metadata
   # schema (by adding accepts_nested_attributes)
