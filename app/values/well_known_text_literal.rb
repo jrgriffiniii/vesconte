@@ -24,7 +24,7 @@ class WellKnownTextLiteral < RDF::Literal
     ne = [eastlimit, northlimit]
     se = [eastlimit, southlimit]
 
-    wkt = "POLYGON (("
+    wkt = "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POLYGON (("
     wkt += sw.join(' ')
     wkt += ', '
     wkt += nw.join(' ')
