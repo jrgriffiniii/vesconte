@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'active_job/arguments'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,5 +15,9 @@ module MyHyrax
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # This enables RDF::Literal attribute values to be offered in arguments for
+    # the ActiveJob
+    ::ActiveJob::Arguments::TYPE_WHITELIST.push(RDF::Literal)
   end
 end

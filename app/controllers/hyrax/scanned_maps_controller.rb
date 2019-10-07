@@ -10,5 +10,15 @@ module Hyrax
 
     # Use this line if you want to use a custom presenter
     self.show_presenter = Hyrax::ScannedMapPresenter
+
+    # This is needed in order to serialize the RDF::Literal attributes
+    def attributes_for_actor
+      attributes = super
+
+      # RDF::Literal#to_s
+      # binding.pry
+      attributes
+    end
+
   end
 end
