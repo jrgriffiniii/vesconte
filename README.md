@@ -1,13 +1,12 @@
-# LinkedGeoHyrax
-
+# GeoHyrax
 _This is a [Hyrax](https://github.com/samvera/hyrax) implementation used for
-demonstrating support for geospatial linked data_
+demonstrating support for geospatial works._
 
 ## Getting started
 
 ### Prerequisites
 
-LinkedGeoHyrax requires the following software to work:
+GeoHyrax requires the following software to work:
 
 1. A SQL RDBMS (MySQL, PostgreSQL), though **note** that SQLite will be used by 
 default if you're looking to get up and running quickly
@@ -29,7 +28,7 @@ Linux, or UNIX than Windows but your mileage may vary -- but we recommend using
 a Ruby version manager such as [RVM](https://rvm.io/) or
 [rbenv](https://github.com/sstephenson/rbenv).
 
-LinkedGeoHyrax supports Ruby 2.4, 2.5, and 2.6. When starting a new project, we
+GeoHyrax supports Ruby 2.4, 2.5, and 2.6. When starting a new project, we
 recommend using the latest Ruby 2.6 version.
 
 ### Redis
@@ -44,7 +43,9 @@ documentation](http://redis.io/documentation) for help doing this.
 
 ### Rails
 
-Hyrax requires Rails 5. This currently uses the latest Rails 5.1 release.
+Hyrax requires Rails 5. This currently uses Rails 5.1.7 release. An upgrade path
+to 5.2.3 (or later) will be available once Hyrax 3.0.0 or a later 2.y.z release 
+than 2.5.1 is available.
 
 ### JavaScript runtime
 
