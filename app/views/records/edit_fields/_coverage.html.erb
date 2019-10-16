@@ -1,3 +1,7 @@
 <legend>Add Location</legend>
-<%= f.input :coverage, label: false, as: :multi_value, input_html: { class: 'hidden' } %>
+<% if f.object.class.multiple?(key) %>
+  <%= f.input key, label: false, required: f.object.required?(key), as: :multi_value, input_html: { class: 'hidden' } %>
+<% else %>
+  <%= f.input key, label: false, required: f.object.required?(key), input_html: { class: 'hidden' } %>
+<% end %>
 <%= bbox(:coverage) %>
