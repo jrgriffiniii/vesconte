@@ -23,13 +23,24 @@ module Hyrax
       end
     end
 
+    def coverage
+      values = model.coverage
+
+      parsed = values.map do |value|
+        WellKnownTextLiteral.parse(value)
+      end
+
+      return parsed.first if self.class.multiple?(:coverage)
+      parsed
+    end
+
     # This provides the casting for RDF literals
     # Until these are natively handled by ActiveTriples, this will be necessary
     def self.model_attributes(_form_params)
       super.tap do |processed_params|
         terms.each do |term|
           if spatial_fields.include?(term)
-            existing_values = processed_params[term] || []
+            existing_values = Array.wrap(processed_params[term]) || []
             processed_params[term] = existing_values.map { |spatial| WellKnownTextLiteral.new(spatial) }
           end
         end
