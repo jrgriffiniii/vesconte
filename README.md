@@ -14,6 +14,8 @@ default if you're looking to get up and running quickly
 1. [ImageMagick](http://www.imagemagick.org/) with JPEG-2000 support
 1. [FITS](#characterization) version 1.0.x (1.0.5 is known to be good, 1.1.0 is
    known to be bad: https://github.com/harvard-lts/fits/issues/140)
+1. [Fedora Commons]() version 4.7.5
+1. [Apache Solr]() version 7.7.2
 
 #### Characterization
 
@@ -109,7 +111,7 @@ which all works will be deposited unless assigned to other administrative sets
 -- by running the following command:
 
 ```
-bundle exec bin/rails hyrax:default_admin_set:create
+bundle exec rails hyrax:default_admin_set:create
 ```
 
 This command also makes sure that Hyrax's built-in workflows are loaded for your
@@ -118,6 +120,25 @@ application and available for the default administrative set.
 **NOTE**: You will want to run this command the first time this code is deployed
 to a new environment as well.
 
+#### Troubleshooting
+One may encounter the following error if the admin. set has to be recreated
+under certain circumstances (e. g. a different Fedora Commons is used).  One may
+encounter the following error:
+
+```bash
+UNIQUE constraint failed: permission_templates.source_id
+```
+
+This indicates that the permission template for the admin. set already exists in
+the database. A solution for this is to reset the database:
+
+```bash
+bundle exec rails db:reset
+```
+
+Unfortunately, one *will* need to re-run `bundle exec rails db:migrate` and
+re-grant their own user admin. privileges.
+
 ### Creating an administrative user account
 
 Create a new user using your e-mail address (e. g. your_email@fake.email.org)
@@ -125,7 +146,7 @@ http://localhost:3000/users/sign_up?locale=en
 
 Grant administrative privileges to your new user:
 ```
-$ rails c
+$ bundle exec rails c
 admin = Role.create(name: "admin")
 admin.users << User.find_by_user_key( "your_email@fake.email.org" )
 admin.save
@@ -139,8 +160,11 @@ servers that Hyrax needs (Solr, Fedora, and Rails):
 ```
 bundle install
 bundle exec rails db:migrate
-FCREPO_URL=FOO SOLR_URL=FOO bundle exec rails server
+FCREPO_URL=http://localhost:8984/rest SOLR_URL=http://localhost:8983/solr/hydra-development bundle exec rails server
 ```
+
+_Note, for working with a Fedora Commons Docker container, one must use a different URL structure:
+`http://[FCREPO_FQDN]:8080/fcrepo/rest`
 
 And now you should be able to browse to [localhost:3000](http://localhost:3000/)
 and see the application.
