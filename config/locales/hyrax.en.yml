@@ -48,11 +48,11 @@ en:
   hyrax:
     account_name: My NetID
     directory:
-      suffix: "@example.org"
+      suffix: "@institution.org"
     footer:
       copyright_html: "<strong>Copyright &copy; 2019 Samvera</strong> Licensed under the Apache License, Version 2.0"
       service_html: A service of <a href="http://samvera.org/" class="navbar-link" target="_blank">Samvera</a>.
     institution_name: Samvera
     institution_name_full: The Samvera Community
-    product_name: GeoHyrax
-    product_twitter_handle: "#GeoHyrax"
+    product_name: Vesconte
+    product_twitter_handle: "#Vesconte"

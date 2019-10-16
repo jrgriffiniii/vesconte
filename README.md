@@ -1,4 +1,4 @@
-# GeoHyrax
+# Vesconte
 _This is a [Hyrax](https://github.com/samvera/hyrax) implementation used for
 demonstrating support for geospatial works._
 
@@ -6,7 +6,7 @@ demonstrating support for geospatial works._
 
 ### Prerequisites
 
-GeoHyrax requires the following software to work:
+Vesconte requires the following software to work:
 
 1. A SQL RDBMS (MySQL, PostgreSQL), though **note** that SQLite will be used by 
 default if you're looking to get up and running quickly
@@ -30,7 +30,7 @@ Linux, or UNIX than Windows but your mileage may vary -- but we recommend using
 a Ruby version manager such as [RVM](https://rvm.io/) or
 [rbenv](https://github.com/sstephenson/rbenv).
 
-GeoHyrax supports Ruby 2.4, 2.5, and 2.6. When starting a new project, we
+Vesconte supports Ruby 2.4, 2.5, and 2.6. When starting a new project, we
 recommend using the latest Ruby 2.6 version.
 
 ### Redis
