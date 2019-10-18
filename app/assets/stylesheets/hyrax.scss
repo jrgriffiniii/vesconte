@@ -14,3 +14,16 @@
 @import "blacklight_gallery/slideshow";
 @import "blacklight_gallery/osd_viewer";
 @import 'hyrax/hyrax';
+
+#content-wrapper {
+  .home-share-work {
+    .row {
+      display: flex;
+      justify-content: center;
+
+      .col {
+        width: percentage(2.0 / 3.0);
+      }
+    }
+  }
+}

@@ -56,3 +56,8 @@ en:
     institution_name_full: The Samvera Community
     product_name: Vesconte
     product_twitter_handle: "#Vesconte"
+    search:
+      form:
+        q:
+          label: Search all collections
+    share_button: Deposit Your Work
