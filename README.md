@@ -104,6 +104,19 @@ system such as [Sidekiq](http://sidekiq.org/). The Hyrax Development Guide has a
 detailed walkthrough of [installing and configuring
 Sidekiq](https://github.com/samvera/hyrax/wiki/Using-Sidekiq-with-Hyrax).
 
+### Creating an administrative user account
+
+Create a new user using your e-mail address (e. g. your_email@fake.email.org)
+using for form at http://localhost:3000/users/sign_up?locale=en
+
+Grant administrative privileges to your new user:
+```
+$ bundle exec rails c
+admin = Role.create(name: "admin")
+admin.users << User.find_by_user_key( "your_email@fake.email.org" )
+admin.save
+```
+
 ### Create default administrative set
 
 Before starting the app, please create the default administrative set -- into 
@@ -136,21 +149,10 @@ the database. A solution for this is to reset the database:
 bundle exec rails db:reset
 ```
 
-Unfortunately, one *will* need to re-run `bundle exec rails db:migrate` and
-re-grant their own user admin. privileges.
-
-### Creating an administrative user account
-
-Create a new user using your e-mail address (e. g. your_email@fake.email.org)
-http://localhost:3000/users/sign_up?locale=en
-
-Grant administrative privileges to your new user:
-```
-$ bundle exec rails c
-admin = Role.create(name: "admin")
-admin.users << User.find_by_user_key( "your_email@fake.email.org" )
-admin.save
-```
+Unfortunately, following this one will *first* need to re-register their own 
+user account, and grant their own user admin. privileges. *Then* please invoke
+`bundle exec rails hyrax:default_admin_set:create` (the order of these steps
+indeed matters).
 
 ### Starting the application
 
@@ -163,11 +165,11 @@ bundle exec rails db:migrate
 FCREPO_URL=http://localhost:8984/rest SOLR_URL=http://localhost:8983/solr/hydra-development bundle exec rails server
 ```
 
-_Note, for working with a Fedora Commons Docker container, one must use a different URL structure:
-`http://[FCREPO_FQDN]:8080/fcrepo/rest`
+_Note, for working with a Fedora Commons Docker container, one must use a 
+different URL structure: `http://[FCREPO_FQDN]:8080/fcrepo/rest`_
 
 And now you should be able to browse to [localhost:3000](http://localhost:3000/)
-and see the application.
+and see the landing page.
 
 ## Customization and Development
 ### Generate a work type
