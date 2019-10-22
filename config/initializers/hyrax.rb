@@ -275,6 +275,8 @@ Hyrax.config do |config|
   # mount point.
   #
   # config.whitelisted_ingest_dirs = []
+
+  config.banner_image = '/assets/banner_image.png'
 end
 
 Date::DATE_FORMATS[:standard] = "%m/%d/%Y"

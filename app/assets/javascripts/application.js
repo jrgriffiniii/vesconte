@@ -20,6 +20,9 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require blacklight/blacklight
 
+//= require leaflet
+//= require leaflet-boundingbox
+//= require Control.Geocoder
+//= require bounding_box_selector
 //= require_tree .
 //= require hyrax
-

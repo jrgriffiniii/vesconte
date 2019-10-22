@@ -8,6 +8,12 @@ class ScannedMap < ActiveFedora::Base
   # self.valid_child_concerns = []
   validates :title, presence: { message: 'Your work must have a title.' }
 
+  # Defines the bounding box for the layer.
+  # The values are structured using the Well-Known Text standard.
+  # @example
+  #   vector.coverage = ['POLYGON ((10 10, 40 10, 40 40, 10 40, 10 10))']
+  property :coverage, predicate: ::RDF::Vocab::DC11.coverage, class_name: 'WellKnownTextLiteral'
+
   # This must be included at the end, because it finalizes the metadata
   # schema (by adding accepts_nested_attributes)
   include ::Hyrax::BasicMetadata

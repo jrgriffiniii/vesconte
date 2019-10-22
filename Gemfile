@@ -5,8 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# This is necessary until Hyrax 3.0.0 or a later 2.y.z release is available
 gem 'rails', '~> 5.1.7'
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.3.0"
@@ -48,6 +47,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry-byebug'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -70,3 +70,6 @@ group :development, :test do
 end
 
 gem 'riiif', '~> 2.0'
+gem 'hydra-role-management'
+gem 'leaflet-rails', '~> 0.7'
+gem 'browse-everything'

@@ -113,6 +113,7 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
+    bootstrap_form (2.7.0)
     breadcrumbs_on_rails (3.0.1)
     browse-everything (0.15.1)
       addressable (~> 2.5)
@@ -145,6 +146,7 @@ GEM
     childprocess (1.0.1)
       rake (< 13.0)
     clipboard-rails (1.7.1)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -306,6 +308,10 @@ GEM
     hydra-pcdm (1.1.0)
       active-fedora (>= 10, < 14)
       mime-types (>= 1)
+    hydra-role-management (0.2.2)
+      blacklight
+      bootstrap_form
+      cancancan
     hydra-works (1.2.0)
       activesupport (>= 4.2.10, < 6.0)
       hydra-derivatives (~> 3.0)
@@ -421,6 +427,7 @@ GEM
       rdf-turtle
       rdf-vocab (>= 0.8)
       slop
+    leaflet-rails (0.7.7)
     legato (0.7.0)
       multi_json
     link_header (0.0.8)
@@ -499,6 +506,12 @@ GEM
     os (1.0.1)
     posix-spawn (0.3.13)
     power_converter (0.1.2)
+    pry (0.12.2)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-byebug (3.7.0)
+      byebug (~> 11.0)
+      pry (~> 0.10)
     public_suffix (3.1.1)
     pul_uv_rails (2.0.1)
     puma (3.12.1)
@@ -756,16 +769,20 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.0)
+  browse-everything
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
   devise
   devise-guests (~> 0.6)
   fcrepo_wrapper
+  hydra-role-management
   hyrax (= 2.5.1)
   jbuilder (~> 2.5)
   jquery-rails
+  leaflet-rails (~> 0.7)
   listen (>= 3.0.5, < 3.2)
+  pry-byebug
   puma (~> 3.7)
   rails (~> 5.1.7)
   riiif (~> 2.0)
