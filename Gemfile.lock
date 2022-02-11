@@ -514,7 +514,8 @@ GEM
       pry (~> 0.10)
     public_suffix (3.1.1)
     pul_uv_rails (2.0.1)
-    puma (3.12.1)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     qa (2.2.0)
       activerecord-import
       deprecation
@@ -783,7 +784,7 @@ DEPENDENCIES
   leaflet-rails (~> 0.7)
   listen (>= 3.0.5, < 3.2)
   pry-byebug
-  puma (~> 3.7)
+  puma (~> 4.3)
   rails (~> 5.1.7)
   riiif (~> 2.0)
   rsolr (>= 1.0)
